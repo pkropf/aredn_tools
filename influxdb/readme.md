@@ -56,3 +56,6 @@ This issue could be resolved if the resulting link_info JSON section instead use
 ```
 
 Unfortunately I'm unable to fathom how to configure the JSON Telegraf plugin to make this transformation so here we are with some Python code to do the work for us.
+
+Update: 
+[Franky1](https://community.influxdata.com/u/Franky1) with the Influx data community offered a solution using the Telegraf execd plugin. See the [message thread](https://community.influxdata.com/t/telegraf-json-and-transformations/19013/3) for more details. Example code he created is in pyjsonparser.py.

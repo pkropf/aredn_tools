@@ -37,15 +37,6 @@ while True:
                 other_fields[key] = value
 
 
-        # create and print an influx line protocol for any non-link_info fields
-        datapoint = {'measurement': data['measurement'],
-                     'fields': other_fields,
-                     'tags': tags,
-                     'time': data['time']
-        }
-        point = Point.from_dict(datapoint)  # new metric object
-        print(point.to_line_protocol())  # write to stdout
-
         # for each set of link_info_IPADDRESS_* found, create and print an influx
         # line protocol for the values
         for ip in ips:
@@ -57,3 +48,19 @@ while True:
             }
             point = Point.from_dict(datapoint)  # new metric object
             print(point.to_line_protocol())  # write to stdout
+
+            # count the number of linkType entries to be included with the other data
+            if 'link_info_linkType' in ips[ip]:
+                count_link_type = 'count_linkType_' + ips[ip]['link_info_linkType']
+                if count_link_type not in other_fields:
+                    other_fields[count_link_type] = 0
+                other_fields[count_link_type] += 1
+
+        # create and print an influx line protocol for any non-link_info fields
+        datapoint = {'measurement': data['measurement'],
+                     'fields': other_fields,
+                     'tags': tags,
+                     'time': data['time']
+        }
+        point = Point.from_dict(datapoint)  # new metric object
+        print(point.to_line_protocol())  # write to stdout

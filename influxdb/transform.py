@@ -1,4 +1,8 @@
 #! /usr/bin/env python3
+#
+# This is the wrong direction to use with Telegraf but would work with additional code as a standalone
+# scrapper and processor of the JSON obtained via an HTTP GET call.
+
 
 import json
 import sys

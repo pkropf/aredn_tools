@@ -14,6 +14,8 @@
 
 from influxdb_client import Point
 from line_protocol_parser import parse_line
+from urllib.parse import urlparse
+
 
 while True:
     try:
@@ -27,6 +29,9 @@ while True:
         new_fields = {}
         other_fields = {}
         ips = {}
+
+        tags['node'] = urlparse(tags['url']).hostname
+
         for key, value in fields.items():
             if 'link_info_' in key:
                 ip = key.split('_')[2]
@@ -41,7 +46,7 @@ while True:
         # line protocol for the values
         for ip in ips:
             tags['link_IP'] = ip
-            datapoint = {'measurement': data['measurement'],
+            datapoint = {'measurement': 'link_info',
                          'fields': ips[ip],
                          'tags': tags,
                          'time': data['time']

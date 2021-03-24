@@ -1,0 +1,83 @@
+{
+    "lon": "-122.236398",
+    "sysinfo": {
+	"uptime": "0 days, 0:29:32",
+	"loads": [
+	    0.37,
+	    0.40999999999999998,
+	    0.35999999999999999
+	]
+    },
+    "interfaces": [
+	{
+	    "mac": "44:D9:E7:65:15:7A",
+	    "name": "eth0.2",
+	    "ip": "10.101.21.122"
+	},
+	{
+	    "mac": "44:D9:E7:64:15:7A",
+	    "name": "wlan0",
+	    "ip": "10.100.21.122"
+	},
+	{
+	    "mac": "44:D9:E7:65:15:7A",
+	    "name": "br-lan",
+	    "ip": "10.32.171.209"
+	},
+	{
+	    "name": "tunl0",
+	    "mac": "00:00:00:00"
+	},
+	{
+	    "name": "eth0",
+	    "mac": "44:D9:E7:65:15:7A"
+	},
+	{
+	    "mac": "44:D9:E7:65:15:7A",
+	    "name": "eth0.1",
+	    "ip": "192.168.31.9"
+	}
+    ],
+    "api_version": "1.7",
+    "lat": "37.794226",
+    "meshrf": {
+	"ssid": "AREDN-10-v3",
+	"channel": "177",
+	"status": "on",
+	"freq": "5.885 GHz",
+	"chanbw": "10"
+    },
+    "tunnels": {
+	"active_tunnel_count": "0",
+	"tunnel_installed": false
+    },
+    "link_info": {
+	"10.88.42.36": {
+	    "neighborLinkQuality": 0.84299999999999997,
+	    "noise": -95,
+	    "linkQuality": 1,
+	    "linkType": "RF",
+	    "hostname": "KJ6WEG-OAK-Griz-SectorM5.local.mesh",
+	    "tx_rate": 14.4,
+	    "olsrInterface": "wlan0",
+	    "rx_rate": 19.5,
+	    "signal": -80
+	},
+	"10.111.157.186": {
+	    "neighborLinkQuality": 1,
+	    "linkQuality": 1,
+	    "hostname": "KK6RUH-Oakland-Nanobeam-M5.local.mesh",
+	    "olsrInterface": "eth0.2",
+	    "linkType": "DTD"
+	}
+    },
+    "grid_square": "CM87ut",
+    "node": "KK6RUH-Oakland-Omni-M5",
+    "node_details": {
+	"description": "KK6RUH Rocket M5 w\/ AMO-5G13 antenna. Highland Terrace, Oakland, CA USA. Part of SFWEM.NET.",
+	"model": "Ubiquiti Rocket M XW",
+	"board_id": "0xe6b5",
+	"firmware_mfg": "AREDN",
+	"firmware_version": "3.20.3.1"
+    }
+}
